@@ -1,0 +1,58 @@
+dataset,source_sheet,field_name,data_type,role,description,example_value,source_file,notes
+ED - Seen on time,Patients seen on time,Reporting unit,text,identifier,Hospital or rollup unit name,Albury Wodonga Health [Albury Campus],myhosp-emergency-department-data-extract.xlsx,Also used at LHN/State/National rollup levels
+ED - Seen on time,Patients seen on time,Reporting unit type,text,dimension,Level of the reporting unit,Hospital,myhosp-emergency-department-data-extract.xlsx,"Values: Hospital, Local Hospital Network, State, National"
+ED - Seen on time,Patients seen on time,State,text,dimension,State/territory code,NSW,myhosp-emergency-department-data-extract.xlsx,"Values: NSW, Vic, Qld, SA, WA, Tas, NT, ACT, NAT"
+ED - Seen on time,Patients seen on time,Peer group,text,dimension,Hospital peer group classification,Large regional hospitals,myhosp-emergency-department-data-extract.xlsx,Used for benchmarking; null for non-hospital rollups
+ED - Seen on time,Patients seen on time,Year,text,dimension,Financial year range as published,2021-22,myhosp-emergency-department-data-extract.xlsx,Requires parsing to integer start year
+ED - Seen on time,Patients seen on time,Triage category,text,dimension,Urgency category assigned at triage,Emergency,myhosp-emergency-department-data-extract.xlsx,"Values: Resuscitation, Emergency, Urgent, Semi-urgent, Non-urgent"
+ED - Seen on time,Patients seen on time,Number of presentations,integer,metric,Count of ED presentations in this row's grain,644112,myhosp-emergency-department-data-extract.xlsx,
+ED - Seen on time,Patients seen on time,Percentage of patients seen on time,decimal,metric,Share of patients whose care started within benchmark time,0.8,myhosp-emergency-department-data-extract.xlsx,Stored as fraction 0-1; suppression codes NP/NP dagger coerced to null
+ED - Seen on time,Patients seen on time,Peer group average,decimal,metric,Average of the percentage metric across the hospital's peer group,0.79,myhosp-emergency-department-data-extract.xlsx,Used for benchmarking comparisons
+ED - Within 4hrs,Time in ED - within 4 hrs,Reporting unit,text,identifier,Hospital or rollup unit name,National,myhosp-emergency-department-data-extract.xlsx,
+ED - Within 4hrs,Time in ED - within 4 hrs,Reporting unit type,text,dimension,Level of the reporting unit,National,myhosp-emergency-department-data-extract.xlsx,
+ED - Within 4hrs,Time in ED - within 4 hrs,State,text,dimension,State/territory code,NAT,myhosp-emergency-department-data-extract.xlsx,
+ED - Within 4hrs,Time in ED - within 4 hrs,Peer group,text,dimension,Hospital peer group classification,Major hospitals,myhosp-emergency-department-data-extract.xlsx,
+ED - Within 4hrs,Time in ED - within 4 hrs,Year,text,dimension,Financial year range as published,2011-12,myhosp-emergency-department-data-extract.xlsx,Requires parsing to integer start year
+ED - Within 4hrs,Time in ED - within 4 hrs,Patient cohort,text,dimension,Patient grouping for this measure,All patients,myhosp-emergency-department-data-extract.xlsx,"Values: All patients, Admitted, Discharged, plus by triage category"
+ED - Within 4hrs,Time in ED - within 4 hrs,Number of presentations,integer,metric,Count of ED presentations in this row's grain,6547342,myhosp-emergency-department-data-extract.xlsx,
+ED - Within 4hrs,Time in ED - within 4 hrs,Percentage who depart ED within 4 hrs,decimal,metric,Share of patients who left ED within 4 hours of arrival,0.64,myhosp-emergency-department-data-extract.xlsx,Stored as fraction 0-1
+ED - Within 4hrs,Time in ED - within 4 hrs,Peer group average,decimal,metric,Average of the percentage metric across the hospital's peer group,0.66,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,Reporting unit,text,identifier,Hospital or rollup unit name,National,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,Reporting unit type,text,dimension,Level of the reporting unit,National,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,State,text,dimension,State/territory code,NAT,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,Peer group,text,dimension,Hospital peer group classification,Small hospitals,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,Year,text,dimension,Financial year range as published,2011-12,myhosp-emergency-department-data-extract.xlsx,Requires parsing to integer start year
+ED - Time in ED,Time in ED,Patient cohort,text,dimension,Patient grouping for this measure,All patients,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,Number of presentations,integer,metric,Count of ED presentations in this row's grain,6547342,myhosp-emergency-department-data-extract.xlsx,
+ED - Time in ED,Time in ED,Median time,text,metric,Median time from arrival to departure,2 hrs 58 mins,myhosp-emergency-department-data-extract.xlsx,Requires conversion to numeric minutes
+ED - Time in ED,Time in ED,Time until most patients (90%) depart ED,text,metric,90th percentile time from arrival to departure,8 hrs 28 mins,myhosp-emergency-department-data-extract.xlsx,Requires conversion to numeric minutes
+ED - Presentations,Presentations,Reporting unit,text,identifier,Hospital or rollup unit name,National,myhosp-emergency-department-data-extract.xlsx,
+ED - Presentations,Presentations,Reporting unit type,text,dimension,Level of the reporting unit,National,myhosp-emergency-department-data-extract.xlsx,
+ED - Presentations,Presentations,State,text,dimension,State/territory code,NAT,myhosp-emergency-department-data-extract.xlsx,
+ED - Presentations,Presentations,Year,text,dimension,Financial year range as published,2011-12,myhosp-emergency-department-data-extract.xlsx,Requires parsing to integer start year
+ED - Presentations,Presentations,Triage category,text,dimension,Urgency category assigned at triage,Emergency,myhosp-emergency-department-data-extract.xlsx,
+ED - Presentations,Presentations,Number of presentations,integer,metric,Raw count of ED visits,647788,myhosp-emergency-department-data-extract.xlsx,
+ALOS,Average length of stay,Reporting unit,text,identifier,Hospital or LHN name,Kilmore and District Hospital,myhosp-average-length-of-stay-data-extract.xlsx,
+ALOS,Average length of stay,Reporting unit type,text,dimension,Level of the reporting unit,Local Hospital Network,myhosp-average-length-of-stay-data-extract.xlsx,"Values: Hospital, Local Hospital Network"
+ALOS,Average length of stay,State,text,dimension,State/territory code,Vic,myhosp-average-length-of-stay-data-extract.xlsx,
+ALOS,Average length of stay,Peer group,text,dimension,Hospital peer group classification,Small hospitals,myhosp-average-length-of-stay-data-extract.xlsx,
+ALOS,Average length of stay,Time period,text,dimension,Financial year range as published,2017-18,myhosp-average-length-of-stay-data-extract.xlsx,Requires parsing to integer start year
+ALOS,Average length of stay,Category,text,dimension,Clinical condition or procedure category,Caesarean delivery,myhosp-average-length-of-stay-data-extract.xlsx,16 categories total; see data requirements doc
+ALOS,Average length of stay,Total number of stays,integer,metric,Count of hospital stays for this category/year,52,myhosp-average-length-of-stay-data-extract.xlsx,
+ALOS,Average length of stay,Number of overnight stays,integer,metric,Count of stays involving at least one overnight,52,myhosp-average-length-of-stay-data-extract.xlsx,
+ALOS,Average length of stay,Percentage of overnight stays,decimal,metric,Share of stays that were overnight,1.0,myhosp-average-length-of-stay-data-extract.xlsx,
+ALOS,Average length of stay,Average length of stay (days),decimal,metric,Mean number of days per stay,4.0,myhosp-average-length-of-stay-data-extract.xlsx,Suppression code NP coerced to null
+ALOS,Average length of stay,Peer group average (days),decimal,metric,Average length of stay across the hospital's peer group,4.1,myhosp-average-length-of-stay-data-extract.xlsx,Used for benchmarking
+ALOS,Average length of stay,Total overnight patient bed days,integer,metric,Sum of overnight bed days for this category/year,208,myhosp-average-length-of-stay-data-extract.xlsx,Building block for a future bed occupancy estimate if bed counts are sourced
+Admissions,Patient admissions,Reporting unit,text,identifier,Hospital or LHN name,Kilmore and District Hospital,myhosp-patient-admission-data-extract.xlsx,
+Admissions,Patient admissions,Reporting unit type,text,dimension,Level of the reporting unit,Local Hospital Network,myhosp-patient-admission-data-extract.xlsx,
+Admissions,Patient admissions,State,text,dimension,State/territory code,Vic,myhosp-patient-admission-data-extract.xlsx,
+Admissions,Patient admissions,Time period,text,dimension,Financial year range as published,2017-18,myhosp-patient-admission-data-extract.xlsx,Requires parsing to integer start year
+Admissions,Patient admissions,Category,text,dimension,Admission type category,Childbirth,myhosp-patient-admission-data-extract.xlsx,12 categories including Total; see data requirements doc
+Admissions,Patient admissions,Number of patient admissions,integer,metric,Count of admissions for this category/year,257,myhosp-patient-admission-data-extract.xlsx,Suppression code <5 coerced to null
+Specialised services,Specialised services,Reporting unit,text,identifier,Hospital name,Albury Wodonga Health [Albury Campus],myhosp-specialised-services-data-extract.xlsx,
+Specialised services,Specialised services,Reporting unit type,text,dimension,Level of the reporting unit,Hospital,myhosp-specialised-services-data-extract.xlsx,Hospital-only in this extract
+Specialised services,Specialised services,State,text,dimension,State/territory code,NSW,myhosp-specialised-services-data-extract.xlsx,
+Specialised services,Specialised services,Time period,text,dimension,Financial year range as published,2017-18,myhosp-specialised-services-data-extract.xlsx,Requires parsing to integer start year
+Specialised services,Specialised services,Specialised services,text,dimension,Type of specialised unit operated,Coronary care unit,myhosp-specialised-services-data-extract.xlsx,33 service types; presence/count flag not a performance metric
+Specialised services,Specialised services,Number of units,integer,metric,Count of units of this service type at the hospital,1,myhosp-specialised-services-data-extract.xlsx,
