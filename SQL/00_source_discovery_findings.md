@@ -3,7 +3,7 @@
 **Project:** Healthcare Operations Dashboard
 **Stage:** 3 — Source Discovery & Assessment
 **Script:** `00_source_discovery.sql`
-**Database:** `healthcare_operations` (SQL Server, 192.168.126.119)
+**Database:** `healthcare_operations`
 **Status:** Complete
 
 ---
