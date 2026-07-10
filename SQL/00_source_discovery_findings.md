@@ -8,8 +8,6 @@
 
 **Database:** `healthcare_operations`
 
-**Status:** Complete
-
 ---
 
 ## 1. Scope
