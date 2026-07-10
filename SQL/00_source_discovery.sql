@@ -254,3 +254,11 @@ ORDER BY reporting_unit;
    END OF 00_source_discovery.sql
    Next: review results above, then build 01_schema.sql
    ============================================================ */
+
+SELECT n, COUNT(*) AS how_many_groups
+FROM (
+    SELECT reporting_unit, financial_year, category, number_of_admissions, number_of_admissions_flag, COUNT(*) AS n
+    FROM dbo.admissions
+    GROUP BY reporting_unit, financial_year, category, number_of_admissions, number_of_admissions_flag
+) x
+GROUP BY n;
