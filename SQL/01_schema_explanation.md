@@ -113,10 +113,3 @@ Split from `fact_ed_volume` deliberately — `triage_category` and `patient_coho
 Grain: hospital + year + specialised service. Simplest fact table — the source table carries no `_flag` column at all, so there's no suppression pattern to model.
 
 ---
-
-## 4. Cross-Cutting Design Principles
-
-- **Surrogate keys everywhere**, natural keys (`reporting_unit`, `financial_year`, `category_name`) kept as regular unique columns, never used directly as join keys between fact and dimension tables. This insulates the model from any future source-side renames or quirks.
-- **Grain enforced as a real constraint**, not just a design intention — every fact table has a `UNIQUE` constraint across its three FKs, so a bug in `02_transform.sql`'s dedupe logic would cause a loud failure in `03_load_model.sql` rather than silently double-counting a metric.
-- **Raw + derived side by side** for suppression flags — nothing from the source is discarded, but everyday filtering doesn't require string-matching flag text.
-- **Every design decision is traceable to a validation query**, not assumption — the peer group split, the hospital naming consistency, and the `fact_ed_volume` column split were all confirmed empirically against the actual data before being written into DDL, rather than guessed from column names alone.
