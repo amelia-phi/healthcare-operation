@@ -1,6 +1,6 @@
 /* ============================================================================
    03_load_model.sql
-   Healthcare Operations Dashboard — Load Model
+   Healthcare Operations Dashboard - Load Model
    Purpose: Populate the star schema (dim_year, dim_hospital, dim_category,
    and 5 fact tables) from the cleaned staging tables (stg_*).
 
